@@ -14,6 +14,15 @@ namespace Carousel3
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.topPanel);
+           // SetSupportActionBar(toolbar);
+            SupportActionBar.Title = "Nara Drive";
+
+           var viewPager = FindViewById<Android.Support.V4.View.ViewPager>(Resource.Id.viewPager);
+            ImageAdapter adapter = new ImageAdapter(this);
+              viewPager.Adapter = adapter;
+
         }
     }
 }
